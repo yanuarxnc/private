@@ -44,3 +44,19 @@ func bubblesort(items []int) {
 		n = n - 1
 	}
 }
+
+func insertion(a []int) []int {
+
+	var temp int
+	for k := 0; k < len(a); k++ {
+		for i := 0; i < k+1; i++ {
+			if a[i] > a[k] {
+				temp = a[k]
+				a[k] = a[i]
+				a[i] = temp
+			}
+		}
+		fmt.Println(a)
+	}
+	return a
+}
