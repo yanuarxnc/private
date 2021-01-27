@@ -60,3 +60,23 @@ func insertion(a []int) []int {
 	}
 	return a
 }
+
+func selection(a []int) []int {
+
+	// var temp int
+	var min int
+	// 7, 4, 5, 2
+	for k, v := range a {
+		min = k
+		for i := k; i < len(a); i++ {
+			if a[i] < a[min] {
+				min = i
+			}
+		}
+		a[k] = a[min]
+		a[min] = v
+
+		fmt.Println(a)
+	}
+	return a
+}
