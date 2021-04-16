@@ -16,7 +16,7 @@ func TestBubble(t *testing.T) {
 		"Test 1": {
 			a:      []int{7, 4, 5, 2},
 			n:      4,
-			expect: []int{2, 3, 5, 7},
+			expect: []int{2, 4, 5, 7},
 		},
 	}
 
