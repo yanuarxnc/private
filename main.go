@@ -2,45 +2,25 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
-	"time"
 )
 
 func main() {
-
-	slice := generateSlice(20)
-	fmt.Println("\n--- Unsorted --- \n\n", slice)
-	bubblesort(slice)
-	fmt.Println("\n--- Sorted ---\n\n", slice, "\n")
+	_ = Bubble([]int{1, 3, 4, 67, 5, 39, 77}, 7)
 }
 
-// Generates a slice of size, size filled with random numbers
-func generateSlice(size int) []int {
+func Bubble(a []int, n int) []int {
 
-	slice := make([]int, size, size)
-	rand.Seed(time.Now().UnixNano())
-	for i := 0; i < size; i++ {
-		slice[i] = rand.Intn(999) - rand.Intn(999)
-	}
-	return slice
-}
-
-func bubblesort(items []int) {
-	var (
-		n      = len(items)
-		sorted = false
-	)
-	for !sorted {
-		swapped := false
-		for i := 0; i < n-1; i++ {
-			if items[i] > items[i+1] {
-				items[i+1], items[i] = items[i], items[i+1]
-				swapped = true
+	var temp int
+	for k := 0; k < n-1; k++ {
+		for i := 0; i < n-k-1; i++ {
+			if a[i] > a[i+1] {
+				temp = a[i]
+				a[i] = a[i+1]
+				a[i+1] = temp
 			}
 		}
-		if !swapped {
-			sorted = true
-		}
-		n = n - 1
 	}
+	fmt.Println(a)
+
+	return a
 }
